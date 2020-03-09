@@ -1,30 +1,24 @@
 import Light from "./Light";
 import React, { useState, useEffect } from "react";
-const initialDelay = 5000;
-const lightDurations = [1000, 5551, 2201];
+const Delay5Seg = 5000;
+const lightDurations = [5000, 2000, 5000];
 
 const TrafficLight1 = () => {
   const [colorIndex, setColorIndex] = useState(0);
   const [isStarted, setIsStarted] = useState(false);
   useEffect(() => {
-    const timer = setTimeout(() => {
+    setTimeout(() => {
       setIsStarted(true);
-    }, initialDelay);
-    return () => {
-      clearTimeout(timer);
-    };
+    }, Delay5Seg);
   }, []);
 
   useEffect(() => {
     if (!isStarted) {
       return;
     }
-    const timer = setTimeout(() => {
+    setTimeout(() => {
       setColorIndex((colorIndex + 1) % 3);
     }, lightDurations[colorIndex]);
-    return () => {
-      clearTimeout(timer);
-    };
   });
   return (
     <div className='traffic-light'>

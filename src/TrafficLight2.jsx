@@ -1,6 +1,6 @@
 import Light from "./Light";
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+// import axios from "axios";
 const Delay5Seg = 5000;
 const semaphoroSeq = {
   data: [
@@ -16,36 +16,27 @@ const TrafficLight2 = () => {
   const [isStarted, setIsStarted] = useState(false);
   const [data, setData] = useState({ data: [] });
   useEffect(() => {
-    // function getFetchUrl() {
-    //   return "https://api-pre.americadigital.com.ar/contents/semaphore/random";
-    // }
     // async function fetchData() {
-    //   const result = await axios(getFetchUrl());
+    //   const result = await axios.get(
+    //     "https://api-pre.americadigital.com.ar/contents/semaphore/random",
+    //   );
     //   setData(result.data);
     // }
-
     // fetchData();
-    const timer = setTimeout(() => {
+    setTimeout(() => {
       setData(semaphoroSeq);
       setIsStarted(true);
     }, Delay5Seg);
-    return () => {
-      clearTimeout(timer);
-    };
   }, []);
 
   useEffect(() => {
     if (!isStarted) {
       return;
     }
-    const timer = setTimeout(() => {
+    setTimeout(() => {
       setColorIndex((colorIndex + 1) % data.data.length);
     }, data.data[colorIndex].duration.slice(0, 1) * 1000);
-    return () => {
-      clearTimeout(timer);
-    };
   });
-  console.log(data);
   return (
     <div className='traffic-light'>
       <Light
