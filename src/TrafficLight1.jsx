@@ -21,10 +21,13 @@ const TrafficLight1 = () => {
     }, lightDurations[colorIndex]);
   });
   return (
-    <div className='traffic-light'>
-      <Light color='#f00' active={!isStarted || colorIndex === 0} />
-      <Light color='#ff0' active={!isStarted || colorIndex === 1} />
-      <Light color='#0c0' active={!isStarted || colorIndex === 2} />
+    <div class='text'>
+      <h1>Semaforo-1</h1>
+      <div className='traffic-light'>
+        <Light color='#f00' active={!isStarted || colorIndex === 0} />
+        <Light color='#ff0' active={!isStarted || colorIndex === 1} />
+        <Light color='#0c0' active={!isStarted || colorIndex === 2} />
+      </div>
     </div>
   );
 };

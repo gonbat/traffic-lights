@@ -9,7 +9,7 @@ import "./index.css";
 
 function App() {
   return (
-    <div className='App'>
+    <div className='Init'>
       <TrafficLight1 />
       <TrafficLight2 />
     </div>

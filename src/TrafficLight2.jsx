@@ -38,19 +38,22 @@ const TrafficLight2 = () => {
     }, data.data[colorIndex].duration.slice(0, 1) * 1000);
   });
   return (
-    <div className='traffic-light'>
-      <Light
-        color='#f00'
-        active={!isStarted || data.data[colorIndex].color === "R"}
-      />
-      <Light
-        color='#ff0'
-        active={!isStarted || data.data[colorIndex].color === "Y"}
-      />
-      <Light
-        color='#0c0'
-        active={!isStarted || data.data[colorIndex].color === "G"}
-      />
+    <div class='text'>
+      <h1>Semaforo-2</h1>
+      <div className='traffic-light'>
+        <Light
+          color='#f00'
+          active={!isStarted || data.data[colorIndex].color === "R"}
+        />
+        <Light
+          color='#ff0'
+          active={!isStarted || data.data[colorIndex].color === "Y"}
+        />
+        <Light
+          color='#0c0'
+          active={!isStarted || data.data[colorIndex].color === "G"}
+        />
+      </div>
     </div>
   );
 };

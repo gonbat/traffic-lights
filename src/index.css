@@ -1,5 +1,11 @@
-.App {
+.Init {
   text-align: center;
+}
+.text {
+  display: inline-block;
+  margin: 10px;
+  font-family: Helvetica;
+  color: red;
 }
 
 .light {
@@ -17,4 +23,7 @@
   background-color: black;
   border: dashed 5px rgb(8, 8, 8);
   display: inline-block;
+}
+body {
+  background-color: royalblue;
 }
